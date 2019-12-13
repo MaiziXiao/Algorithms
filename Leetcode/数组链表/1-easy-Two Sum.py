@@ -18,6 +18,7 @@ class Solution(object):
         """
 
         # 1. one pass hash-table
+        # # Lookup table use space complexity for time complexity
         # lookup = {}
         # for i, num in enumerate(nums):
         #     if target - num in lookup:
