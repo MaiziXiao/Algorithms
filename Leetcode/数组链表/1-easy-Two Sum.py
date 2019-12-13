@@ -26,12 +26,11 @@ class Solution(object):
         # return []
 
         # 2. brute force (own solution)
-        #
         for a, b in itertools.combinations(enumerate(nums), 2):
             if a[1] + b[1] == target:
                 return [a[0], b[0]]
 
-        # 3. brute force (own solution)
+        # 3. brute force (online solution)
         # k = 0
         # for i in nums:
         #     j = target - i
@@ -41,7 +40,7 @@ class Solution(object):
         #         return [k - 1, tmp_nums.index(j) + k]
 
 
-nums1 = [3, 2, 5, 1, 3]
+nums1 = [3, 2, 5, 1]
 target1 = 6
 solution = Solution()
 print(solution.twoSum(nums1,target1))

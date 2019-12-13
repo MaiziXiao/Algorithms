@@ -47,7 +47,9 @@ class Solution(object):
 
         # 2. online
         # dummy = ListNode(0)
+        # # current is the current ListNode and carry is the value
         # current, carry = dummy, 0
+        # # when linked list is not till the end
         # while l1 or l2:
         #     val = carry
         #     if l1:
@@ -59,13 +61,13 @@ class Solution(object):
         #     carry, val = val // 10, val % 10
         #     current.next = ListNode(val)
         #     current = current.next
+        # # When l1, l2 same length and there should be an extra ListNode
         # if carry == 1:
         #     current.next = ListNode(1)
         # return dummy.next
 
 
-
-a, a.next = ListNode(1), ListNode(4)#, ListNode(3)
+a, a.next, a.next.next = ListNode(2), ListNode(4), ListNode(3)
 b, b.next, b.next.next = ListNode(5), ListNode(6), ListNode(4)
 result = Solution().addTwoNumbers(a, b)
 print("{0} -> {1} -> {2}".format(result.val, result.next.val, result.next.next.val))
