@@ -9,12 +9,22 @@ class Solution:
         Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
         It doesn't matter what you leave beyond the returned length.
         """
+        # Own Solution
         # 倒序不会弄乱index, Time complexity: O(n)
-        for i in range(len(nums)-1, -1, -1):
-            if i == 0:
-                return len(nums)
-            if nums[i] == nums[i-1]:
+        # for i in range(len(nums)-1, -1, -1):
+        #     if i == 0:
+        #         return len(nums)
+        #     if nums[i] == nums[i-1]:
+        #         nums.pop(i)
+
+        #  Online Solution
+        i = 0
+        while i < len(nums) - 1:
+            if nums[i] == nums[i+1]:
                 nums.pop(i)
+            else:
+                i += 1
+        return len(nums)
 
 
 result = Solution().removeDuplicates([0,0,1,1,1,2,2,3,3,4])
