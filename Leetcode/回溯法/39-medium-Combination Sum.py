@@ -47,7 +47,7 @@ class Solution:
             self.final_list.append(path.copy())
         else:
             for i in range(start_index, len(candidates)):
-                # 剪枝
+                # 回溯点，剪枝
                 # My mistake: if sum(path) + candidates[i] > target:
                 if target - candidates[i] < 0:
                     break
