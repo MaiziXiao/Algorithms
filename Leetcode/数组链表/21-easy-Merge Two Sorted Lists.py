@@ -31,7 +31,7 @@ class Solution:
         # curr.next = l1 or l2
         # return dummy.next
 
-        # Online Solution (recursively)　动态规划
+        # Online Solution (recursively)　动态规划 贪心
         def mergeTwoLists(self, l1, l2):
             # 当l1或者l2是空的，返回那个不空的
             if not l1 or not l2:

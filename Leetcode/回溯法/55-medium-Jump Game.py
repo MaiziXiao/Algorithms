@@ -37,6 +37,6 @@ class Solution:
         # position to the last. We start from the first position and jump to every index that is reachable.
         # We repeat the process until last index is reached. When stuck, backtrack.
 
-        # Approach 3: 动态规划
+        # Approach 3: 动态规划 贪心
 
 print(Solution().canJump([2,5,0,0]))
