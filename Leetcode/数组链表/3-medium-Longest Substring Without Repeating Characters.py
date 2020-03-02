@@ -19,15 +19,18 @@ class Solution:
                  Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
     """
     def lengthOfLongestSubstring(self, s: str) -> int:
-        substring = []
-        max_len = 0
-        for letter in s:
-            print(letter, substring)
-            if letter not in substring:
-                substring.append(letter)
-                max_len = max(max_len, len(substring))
+        left, right = 0, 0
+        subString = []
+        res = 0
+        while left < len(s) and right < len(s):
+            if s[right] not in subString:
+                subString.append(s[right])
+                right += 1
             else:
-                substring = [letter]
-        print(max_len)
-        return max_len
-Solution().lengthOfLongestSubstring("dvdf")
+                subString.pop(0)
+                left += 1
+            res = max(res, len(s))
+        return res
+
+
+print(Solution().lengthOfLongestSubstring("dvdf"))
