@@ -36,6 +36,7 @@ class Solution:
         sum = 0
         count = 0
 
+        # 二分法
         while a >= b:
             sum = b
             count = 1
