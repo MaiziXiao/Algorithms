@@ -27,6 +27,7 @@ class Solution:
         stack = [(1, root)]
         while stack:
             go_deeper, node = stack.pop()
+            #
             if node is None:
                 continue
             if go_deeper:
