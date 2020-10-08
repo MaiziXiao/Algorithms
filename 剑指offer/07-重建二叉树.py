@@ -31,6 +31,7 @@ class Solution:
             return None
         loc = inorder.index(preorder[0])
         root = TreeNode(preorder[0])
+        # 前序和中序遍历左子树都是在list的前一半，所以可以用中序的index去index前序的List
         root.left = self.buildTree(preorder[1:loc+1], inorder[0:loc])
         root.right = self.buildTree(preorder[loc+1:], inorder[loc+1:])
         return root
