@@ -9,3 +9,13 @@
 
 2. 二分法
     https://zhuanlan.zhihu.com/p/86520559
+
+3.位运算
+输出一个整数的各个位
+        res = []
+        while n > 0:
+            left = n%10
+            res.append(left)
+            n = (n-left)//10
+        print(res)
+        return res
