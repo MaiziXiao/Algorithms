@@ -32,26 +32,44 @@ class Solution:
            [5,8,4,5]
         ]
         """
+
+        #         if not root:
+        #             return []
+        #         res = []
+        #
+        #         def helper(root: TreeNode, path, sum: int):
+        #             sum = sum - root.val
+        #             if root.left is None and root.right is None:
+        #                 if sum == 0:
+        #                     res.append(path)
+        #                 return
+        #             if root.left:
+        #                 helper(root.left, path+[root.left.val], sum)
+        #             if root.right:
+        #                 helper(root.right, path+[root.right.val], sum)
+        #
+        #         helper(root,[root.val], sum)
+        #
+        #         return res
+
+        if not root:
+            return []
         res = []
-
-        def helper(root: TreeNode, path: List, sum: int):
-            print("path", path)
-            print("root", root.val)
-            print(sum)
-            if sum <= 0:
-                return False
-            if root.left is None and root.right is None:
-                if root.val == sum:
-                    final_list = path.append(root.val)
-                    res.append(final_list)
-                return
+        path = []
+        def helper(root: TreeNode, sum: int):
             path.append(root.val)
+            sum = sum - root.val
+            if root.left is None and root.right is None:
+                if sum == 0:
+                    # path 一定要copy不然后面后修改
+                    res.append(path[:])
+                return
             if root.left:
-                helper(root.left, path, sum - root.val)
+                helper(root.left,  sum)
+                path.pop()
             if root.right:
-                helper(root.right, path, sum - root.val)
-            path.pop()
+                helper(root.right,  sum)
+                path.pop()
 
-        helper(root, [], sum)
-
+        helper(root, sum)
         return res

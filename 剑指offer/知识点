@@ -21,3 +21,21 @@
             n = (n-left)//10
         print(res)
         return res
+
+4回溯法模板
+    def dfs(target, begin, path):
+        # 结束条件
+        if target == 0:
+            if path not in res:
+               # python的话一定要加: 才是复制，否则后续操作会修改
+                res.append(path[:])
+            return
+        for i in range(begin, len(candidates)):
+            rediduel = target - candidates[i]
+           # 减枝条件
+            if rediduel < 0:
+                break
+            path.append(candidates[i])
+            dfs(rediduel, i+1, path)
+            #最后要加pop
+            path.pop()
