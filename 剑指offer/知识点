@@ -22,7 +22,7 @@
         print(res)
         return res
 
-4回溯法模板
+4.回溯法模板
     def dfs(target, begin, path):
         # 结束条件
         if target == 0:
@@ -39,3 +39,7 @@
             dfs(rediduel, i+1, path)
             #最后要加pop
             path.pop()
+
+5.排序
+快速排序、归并排序、计数排序
+https://zhuanlan.zhihu.com/p/63227573
