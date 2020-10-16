@@ -11,6 +11,9 @@
         # 从某层到下一层的关系是什么？
 2. 二分法
     https://zhuanlan.zhihu.com/p/86520559
+    high = len(nums) - 1
+    low = 0
+    左闭右开
 
 3.位运算
 输出一个整数的各个位
