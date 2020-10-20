@@ -22,4 +22,23 @@ class Solution:
                     tmp_list = [x for x in range(a, a+i)]
                     result.insert(0, tmp_list)
         return result
+
+        # 滑动窗口
+        res = []
+        l = 1
+        r = 2
+        while l < r:
+            a = []
+            sum = (l + r) * (r - l + 1) / 2
+            if sum < target:
+                r += 1
+            elif sum > target:
+                l += 1
+            else:
+                for i in range(l, r + 1):
+                    a.append(i)
+                res.append(a)
+                l += 1
+                r += 1
+        return res
 Solution().findContinuousSequence(15)
