@@ -18,7 +18,7 @@ class Solution:
         # 每次讲该数（在代码中表示为num2）左移一位，表示进位后。
         # 循环第一二步，直至两数的和没有进位位为止。
         while b:
-            mainPart = a^b
+            tmp = a^b
             b = (a&b)<<1
-            a = mainPart
+            a = tmp
         return a
