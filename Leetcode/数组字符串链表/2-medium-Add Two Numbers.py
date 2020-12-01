@@ -14,6 +14,7 @@ class Solution(object):
     # Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
     # Output: 7 -> 0 -> 8
     """
+
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
@@ -26,7 +27,7 @@ class Solution(object):
         carry = 0
         p = l1
         q = l2
-        while (p != None or q != None ):
+        while p != None or q != None:
             if p is not None:
                 x = p.val
                 p = p.next

@@ -23,6 +23,7 @@ class Solution:
     Y A   H R
     P     I
     """
+
     def convert(self, s: str, numRows: int) -> str:
         list = [[0 for x in range(len(s))] for y in range(numRows)]
         m, n = 0, 0
@@ -56,4 +57,5 @@ class Solution:
     # 发现所有行的重复周期都是 2 * nRows - 2
     # 对于首行和末行之间的行，还会额外重复一次，重复的这一次距离本周期起始字符的距离是 2 * nRows - 2 - 2 * i
 
-Solution().convert("ABC",1)
+
+print(Solution().convert("ABCasdfasdf", 2))

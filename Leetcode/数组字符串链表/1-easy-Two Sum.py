@@ -10,6 +10,7 @@ class Solution(object):
     Because nums[0] + nums[1] = 2 + 7 = 9,
     return [0, 1].
     """
+
     def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -19,17 +20,17 @@ class Solution(object):
 
         # 1. one pass hash-table
         # # Lookup table use space complexity for time complexity
-        # lookup = {}
-        # for i, num in enumerate(nums):
-        #     if target - num in lookup:
-        #         return [lookup[target - num], i]
-        #     lookup[num] = i
-        # return []
+        lookup = {}
+        for i, num in enumerate(nums):
+            if target - num in lookup:
+                return [lookup[target - num], i]
+            lookup[num] = i
+        return []
 
         # 2. brute force (own solution)
-        for a, b in itertools.combinations(enumerate(nums), 2):
-            if a[1] + b[1] == target:
-                return [a[0], b[0]]
+        # for a, b in itertools.combinations(enumerate(nums), 2):
+        #     if a[1] + b[1] == target:
+        #         return [a[0], b[0]]
 
         # 3. brute force (online solution)
         # k = 0
@@ -44,4 +45,4 @@ class Solution(object):
 nums1 = [3, 2, 5, 1]
 target1 = 6
 solution = Solution()
-print(solution.twoSum(nums1,target1))
+print(solution.twoSum(nums1, target1))
