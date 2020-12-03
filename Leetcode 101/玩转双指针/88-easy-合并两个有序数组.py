@@ -35,4 +35,5 @@ class Solution:
         if n > 0:
             nums1[:n] = nums2[:n]
 
-Solution().merge([1,2,3,0,0,0], 3, [2,5,6], 3)
+
+Solution().merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
