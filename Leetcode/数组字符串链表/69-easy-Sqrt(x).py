@@ -16,22 +16,24 @@ class Solution:
     Explanation: The square root of 8 is 2.82842..., and since
                  the decimal part is truncated, 2 is returned.
     """
+
     def mySqrt(self, x: int) -> int:
-        if x==0:
+        if x == 0:
             return 0
         left = 1
         right = x
 
         while left <= right:
-            mid = (left+right)//2
+            mid = (left + right) // 2
             print(left, mid, right)
-            if mid**2 <= x < (mid+1)**2:
+            if mid ** 2 <= x < (mid + 1) ** 2:
                 return mid
-            elif (mid+1)**2 == x:
-                return mid+1
-            elif x < mid**2:
-                right = mid-1
-            elif (mid+1)**2 < x:
-                left = mid+1
+            elif (mid + 1) ** 2 == x:
+                return mid + 1
+            elif x < mid ** 2:
+                right = mid - 1
+            elif (mid + 1) ** 2 < x:
+                left = mid + 1
+
 
 print(Solution().mySqrt(2147395599))
