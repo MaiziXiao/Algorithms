@@ -39,4 +39,3 @@ class Solution:
         while right < len(nums)-1 and nums[right+1] == target:
             right += 1
         return [left, right]
-Solution().searchRange([2, 2], 3)
