@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     """
     Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are
@@ -15,6 +16,7 @@ class Solution:
     First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
     Could you come up with a one-pass algorithm using only constant space?
     """
+
     def sortColors(self, nums: List[int]) -> None:
         #  解法一
         # 遍历数组，统计（0，1，2）的个数, 根据 (0，1，2）的个数重排数组 这种思路的时间复杂度：O(n)，需要遍历数组两次。
@@ -25,7 +27,6 @@ class Solution:
         # 我们用三个指针，设置两个指针begin指向前部的末尾的下一个元素（刚开始默认前部无0，所以指向第一个位置），
         # end指向后部开头的前一个位置（刚开始默认后部无2，所以指向最后一个位置），然后设置一个遍历指针current，从头开始进行遍历。
         # 这种思路的时间复杂度也是$O(n)$, 只需要遍历数组一次。
-
 
         p0 = cur = 0
         p2 = len(nums) - 1
