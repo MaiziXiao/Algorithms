@@ -41,7 +41,7 @@ class Solution:
             if s[right] not in letter_dict:
                 letter_dict[s[right]] = right
             else:
-                # 对于abba，当right指向最后的a的时候，left指向的是字典中保留的有第一个位置的a，如果不对此进行判断的话，left会移动到第一个字符b。
+                # 对于acba，当right指向最后的a的时候，left指向的是字典中保留的有第一个位置的a，如果不对此进行判断的话，left会移动到第一个字符b。
                 left = max(left, letter_dict[s[right]] + 1)
                 letter_dict[s[right]] = right
             right += 1
