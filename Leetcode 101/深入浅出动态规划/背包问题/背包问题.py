@@ -27,6 +27,8 @@ def take_items(W: int, weights: List[int], values: List[int]):
             # 和不拿哪个高（这个总重量j里目前最大的value）
             else:
                 dp[i][j] = max(dp[i - 1][j], values[i - 1] + dp[i - 1][j - weights[i - 1]])
+                # 对于一个物品可以拿多次的情况, 看同一行[i-1]变成[i]
+                # dp[i][j] = max(dp[i - 1][j], values[i - 1] + dp[i][j - weights[i - 1]])
     return dp[-1][-1]
 
 
