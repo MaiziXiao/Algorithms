@@ -27,7 +27,7 @@ class Solution(object):
         carry = 0
         p = l1
         q = l2
-        while p != None or q != None:
+        while not p or not q:
             if p is not None:
                 x = p.val
                 p = p.next
@@ -68,7 +68,7 @@ class Solution(object):
         # return dummy.next
 
 
-a, a.next, a.next.next = ListNode(2), ListNode(4), ListNode(3)
-b, b.next, b.next.next = ListNode(5), ListNode(6), ListNode(4)
-result = Solution().addTwoNumbers(a, b)
-print("{0} -> {1} -> {2}".format(result.val, result.next.val, result.next.next.val))
+# a, a.next, a.next.next = ListNode(2), ListNode(4), ListNode(3)
+# b, b.next, b.next.next = ListNode(5), ListNode(6), ListNode(4)
+# result = Solution().addTwoNumbers(a, b)
+# print("{0} -> {1} -> {2}".format(result.val, result.next.val, result.next.next.val))
