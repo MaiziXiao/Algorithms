@@ -20,26 +20,24 @@ class Solution:
     Input: "(]"
     Output: false
     """
+
     # Stack 堆栈
     def isValid(self, s: str) -> bool:
-      stack = []
-      map = {
-        "{":"}",
-        "[":"]",
-        "(":")"
-      }
-      for x in s:
-        if x in map:
-          stack.append(map[x])
-        else:
-          if len(stack)!=0:
-            top_element = stack.pop()
-            if x != top_element:
-              return False
+        stack = []
+        map = {"{": "}", "[": "]", "(": ")"}
+        for x in s:
+            if x in map:
+                stack.append(map[x])
             else:
-              continue
-          else:
-            return False
-      return len(stack) == 0
+                if len(stack) != 0:
+                    top_element = stack.pop()
+                    if x != top_element:
+                        return False
+                    else:
+                        continue
+                else:
+                    return False
+        return len(stack) == 0
+
 
 print(Solution().isValid("()"))
