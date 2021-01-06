@@ -8,6 +8,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         """
@@ -32,6 +33,6 @@ class Solution:
         loc = inorder.index(preorder[0])
         root = TreeNode(preorder[0])
         # 前序和中序遍历左子树都是在list的前一半，所以可以用中序的index去index前序的List
-        root.left = self.buildTree(preorder[1:loc+1], inorder[0:loc])
-        root.right = self.buildTree(preorder[loc+1:], inorder[loc+1:])
+        root.left = self.buildTree(preorder[1 : loc + 1], inorder[0:loc])
+        root.right = self.buildTree(preorder[loc + 1 :], inorder[loc + 1 :])
         return root
