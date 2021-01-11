@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
     """
     找出数组中重复的数字。
@@ -14,6 +16,7 @@ class Solution:
 
     2 <= n <= 100000
     """
+
     def findRepeatNumber(self, nums: List[int]) -> int:
         # # Time performance unacceptable, O(2n)
         # list_seen = []
@@ -53,3 +56,6 @@ class Solution:
                     # The two lines below are not working. Why?
                     # nums[i] = nums[nums[i]]
                     # nums[nums[i]] = tmp
+
+
+Solution().findRepeatNumber([2, 3, 1, 0, 2, 5, 3])
