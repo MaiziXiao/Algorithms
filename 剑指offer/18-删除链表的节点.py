@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def deleteNode(self, head: ListNode, val: int) -> ListNode:
         """
@@ -33,3 +34,25 @@ class Solution:
             head = head.next
 
         return dummy_node.next
+
+
+class Solution:
+    def deleteDuplication(self, pHead):
+        "删除重复的链表节点”
+        first = ListNode(-1)
+        first.next = pHead
+        curr = pHead
+        last = first
+        # 如果不一样就继续
+        while curr and curr.next:
+            if curr.val != curr.next.val:
+                curr = curr.next
+                last = last.next
+            else:
+                # 当cur.val = cur.next.val的时候，一直找cur.next.next...直到和cur.val不一样
+                val = curr.val
+                while curr and curr.val == val:
+                    curr = curr.next
+                # 再把last重置为现在的curr
+                last.next = curr
+        return first.next

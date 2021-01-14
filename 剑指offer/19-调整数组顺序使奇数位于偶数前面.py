@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
     def exchange(self, nums: List[int]) -> List[int]:
         """
@@ -12,13 +14,37 @@ class Solution:
         # 时间复杂度O(n)，空间复杂度O(1)
         end = 0
         for i in range(len(nums)):
-            num = nums[i-end]
+            num = nums[i - end]
             # 偶数
             if num % 2 == 0:
                 nums.append(num)
-                nums.pop(i-end)
+                nums.pop(i - end)
                 end += 1
             # 奇数不用操作
         return nums
 
-print(Solution().exchange([2,16,3,5,13,1,16,1,12,18,11,8,11,11,5,1]))
+        def reorder(nums, target_func):
+            # 双指针
+            if not isinstance(nums, list) or len(nums) == 0:
+                return
+
+            for num in nums:
+                if not isinstance(num, int):
+                    return
+
+            left = 0
+            right = len(nums) - 1
+            while left < right:
+                # left奇数 l +=1
+                while left < right and not (nums[right] & 1) == 0:
+                    left += 1
+
+                while left < right and (nums[right] & 1):
+                    # right 偶数 r -= 1
+                    right -= 1
+                # left 偶，right奇，换
+                if left < right:
+                    nums[left], nums[right] = nums[right], nums[left]
+
+
+print(Solution().exchange([2, 16, 3, 5, 13, 1, 16, 1, 12, 18, 11, 8, 11, 11, 5, 1]))

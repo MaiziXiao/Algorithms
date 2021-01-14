@@ -15,12 +15,12 @@ class Solution:
         输入：[2,2,2,0,1]
         输出：0
         """
-        l, r = 0, len(numbers)-1
+        l, r = 0, len(numbers) - 1
         while l < r:
-            mid = (r+l)//2
+            mid = (r + l) // 2
             # 有序在左边，右边找降序最小点
             if numbers[mid] > numbers[r]:
-                l = mid+1
+                l = mid + 1
             # 有序在右边，左边找降序最小点
             elif numbers[mid] < numbers[r]:
                 r = mid
@@ -28,4 +28,5 @@ class Solution:
                 r -= 1
         return numbers[l]
 
-Solution().minArray([2,2,2,0,1])
+
+Solution().minArray([2, 2, 2, 0, 1, 2, 2, 2, 2,2,2,2,2])

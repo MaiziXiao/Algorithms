@@ -28,14 +28,23 @@ class Solution:
         def search(row, column, left_word, visited):
             if not left_word:
                 return True
-            if row < 0 or row >= m or column < 0 or column >= n \
-                    or visited[row][column] or board[row][column] != left_word[0]:
+            if (
+                row < 0
+                or row >= m
+                or column < 0
+                or column >= n
+                or visited[row][column]
+                or board[row][column] != left_word[0]
+            ):
                 return False
             visited[row][column] = True
-            if search(row, column - 1, left_word[1:], visited) \
-                  or search(row, column + 1, left_word[1:], visited) \
-                  or search(row - 1, column, left_word[1:], visited) \
-                  or search(row + 1, column, left_word[1:], visited):
+            # Or 的4种情况，如果成功了，返回true. 如果不成功，visited状态会在递归中被重置成False
+            if (
+                search(row, column - 1, left_word[1:], visited)
+                or search(row, column + 1, left_word[1:], visited)
+                or search(row - 1, column, left_word[1:], visited)
+                or search(row + 1, column, left_word[1:], visited)
+            ):
                 return True
             # 回溯要把状态返回原始
             visited[row][column] = False
@@ -69,4 +78,3 @@ class Solution:
         #         return True
         #     visited[i][j] = False
         #     return False
-

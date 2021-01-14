@@ -43,4 +43,5 @@ class Solution:
 
         return self.num
 
-Solution().movingCount(1,2,1)
+
+Solution().movingCount(1, 2, 1)
